@@ -120,6 +120,14 @@
     <None Include="Resources\Settings 512px.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Encrypt 25px.png" />
+    <None Include="Resources\Decrypt 25px.png" />
+    <None Include="Resources\Encrypt 512px.png" />
+    <None Include="Resources\Decrypt 512px.png" />
+    <None Include="Resources\Deployment 512px.png" />
+    <None Include="Resources\Json 512px.png" />
+    <None Include="Resources\Deployment 512px Greyscale.png" />
+    <None Include="Resources\Json 512px Greyscale.png" />
     <Content Include="thalpius.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

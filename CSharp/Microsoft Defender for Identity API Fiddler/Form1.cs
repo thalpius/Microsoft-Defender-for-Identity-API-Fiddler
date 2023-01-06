@@ -15,6 +15,9 @@ using System.Net.Http.Headers;
 using System.Net.Http;
 using System.Xml.Linq;
 using static System.Resources.ResXFileRef;
+using System.Security.Cryptography.X509Certificates;
+using System.Net;
+using System.Security.Cryptography;
 
 namespace Microsoft_Defender_for_Identity_API_Fiddler
 {
@@ -38,6 +41,8 @@ namespace Microsoft_Defender_for_Identity_API_Fiddler
             pnlCompress.Visible = false;
             pnlDecompress.Visible = false;
             pnlSettings.Visible = false;
+            pnlEncrypt.Visible = false;
+            pnlDecrypt.Visible = false;
         }
         public static bool IsBase64String(string s)
         {
@@ -64,6 +69,8 @@ namespace Microsoft_Defender_for_Identity_API_Fiddler
             pnlCompress.Visible = false;
             pnlDecompress.Visible = false;
             pnlSettings.Visible = false;
+            pnlEncrypt.Visible = false;
+            pnlDecrypt.Visible = false;
         }
 
         private void btnRequest_Click(object sender, EventArgs e)
@@ -75,6 +82,8 @@ namespace Microsoft_Defender_for_Identity_API_Fiddler
             pnlCompress.Visible = false;
             pnlDecompress.Visible = false;
             pnlSettings.Visible = false;
+            pnlEncrypt.Visible = false;
+            pnlDecrypt.Visible = false;
         }
 
         private void btnCompress_Click(object sender, EventArgs e)
@@ -86,6 +95,8 @@ namespace Microsoft_Defender_for_Identity_API_Fiddler
             pnlCompress.Visible = true;
             pnlDecompress.Visible = false;
             pnlSettings.Visible = false;
+            pnlEncrypt.Visible = false;
+            pnlDecrypt.Visible = false;
         }
 
         private void btnDecompress_Click(object sender, EventArgs e)
@@ -97,6 +108,8 @@ namespace Microsoft_Defender_for_Identity_API_Fiddler
             pnlCompress.Visible = false;
             pnlDecompress.Visible = true;
             pnlSettings.Visible = false;
+            pnlEncrypt.Visible = false;
+            pnlDecrypt.Visible = false;
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -108,6 +121,33 @@ namespace Microsoft_Defender_for_Identity_API_Fiddler
             pnlCompress.Visible = false;
             pnlDecompress.Visible = false;
             pnlSettings.Visible = true;
+            pnlEncrypt.Visible = false;
+            pnlDecrypt.Visible = false;
+        }
+        private void btnEncrypt_Click(object sender, EventArgs e)
+        {
+            MoveSidePanel(btnEncrypt);
+            pbTitle.Image = Microsoft_Defender_for_Identity_API_Fiddler.Properties.Resources.Encrypt_512px;
+            pnlDashboard.Visible = false;
+            pnlRequest.Visible = false;
+            pnlCompress.Visible = false;
+            pnlDecompress.Visible = false;
+            pnlSettings.Visible = false;
+            pnlEncrypt.Visible = true;
+            pnlDecrypt.Visible = false;
+        }
+
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            MoveSidePanel(btnDecrypt);
+            pbTitle.Image = Microsoft_Defender_for_Identity_API_Fiddler.Properties.Resources.Decrypt_512px;
+            pnlDashboard.Visible = false;
+            pnlRequest.Visible = false;
+            pnlCompress.Visible = false;
+            pnlDecompress.Visible = false;
+            pnlSettings.Visible = false;
+            pnlEncrypt.Visible = false;
+            pnlDecrypt.Visible = true;
         }
 
         private void pnlTop_MouseDown(object sender, MouseEventArgs e)
@@ -195,44 +235,88 @@ namespace Microsoft_Defender_for_Identity_API_Fiddler
                 compressedBytes = Compress(stream);
             }
 
-            var client = new HttpClient();
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", txtBoxSettingsWorkspaceID.Text + ":" + txtBoxAccessKey.Text);
+
             MemoryStream stream1 = new MemoryStream(compressedBytes);
             StreamContent streamContent = new StreamContent(stream1);
-
-            var apiEndpoint = pnlRequestBody.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-
-            string URI = "https://" + txtBoxSettingsWorkspaceName.Text + "sensorapi.atp.azure.com/api/" + apiEndpoint.Text + "/v1.0";
-
-            using (var message = client.PostAsync(URI, streamContent).Result)
+            
+            if (rbRequestJson.Checked == true)
             {
-                string code = message.StatusCode.ToString();
-                richTxtBoxRequestResponse.Text = "Status: " + code + "\n";
-                responseBytes = message.Content.ReadAsByteArrayAsync().Result;
-
-                using (var decompressedStream = Decompress(responseBytes))
-                using (var reader = new StreamReader(decompressedStream))
+                var handler = new HttpClientHandler();
+                handler.ClientCertificates.Add(new X509Certificate2(txtBoxCertificate.Text, txtBoxCertificatePassword.Text));
+                var client = new HttpClient(handler);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", txtBoxSettingsWorkspaceID.Text + ":" + txtBoxAccessKey.Text);
+                var apiEndpoint = pnlRequestBody.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+                string URI = "https://" + txtBoxSettingsWorkspaceName.Text + "sensorapi.atp.azure.com/api/" + apiEndpoint.Text + "/v1.0";
+                using (var message = client.PostAsync(URI, streamContent).Result)
                 {
-                    decompressedValue = reader.ReadToEnd();
+                    string code = message.StatusCode.ToString();
+                    richTxtBoxRequestResponse.Text = "Status: " + code + "\n";
+                    responseBytes = message.Content.ReadAsByteArrayAsync().Result;
 
+                    using (var decompressedStream = Decompress(responseBytes))
+                    using (var reader = new StreamReader(decompressedStream))
+                    {
+                        decompressedValue = reader.ReadToEnd();
+                    }
+                    richTxtBoxRequestResponse.AppendText("Response: \n" + decompressedValue);
                 }
-                richTxtBoxRequestResponse.AppendText("Response: \n" + decompressedValue);
             }
+            
+            else if (rbRequestSensorDeployment.Checked == true)
+            {
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", txtBoxSettingsWorkspaceID.Text + ":" + txtBoxAccessKey.Text);
+                var apiEndpoint = pnlRequestBody.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+                string URI = "https://" + txtBoxSettingsWorkspaceName.Text + "sensorapi.atp.azure.com/api/" + apiEndpoint.Text + "/v1.0";
+                using (var message = client.PostAsync(URI, streamContent).Result)
+                {
+                    string code = message.StatusCode.ToString();
+                    richTxtBoxRequestResponse.Text = "Status: " + code + "\n";
+                    responseBytes = message.Content.ReadAsByteArrayAsync().Result;
+
+                    using (var decompressedStream = Decompress(responseBytes))
+                    using (var reader = new StreamReader(decompressedStream))
+                    {
+                        decompressedValue = reader.ReadToEnd();
+                    }
+                    richTxtBoxRequestResponse.AppendText("Response: \n" + decompressedValue);
+                }
+            }            
+        }
+        private string EncryptPassword()
+        {
+            string EncryptedPassword = string.Empty;
+            X509Certificate2 cert = new X509Certificate2(txtBoxCertificate.Text, txtBoxCertificatePassword.Text, X509KeyStorageFlags.MachineKeySet);
+            using (RSA publicKey = cert.GetRSAPublicKey())
+            {
+                byte[] dataToEncrypt = Encoding.Unicode.GetBytes(richTextBoxEncryptDecrypted.Text);
+                byte[] bytesDecrypted = publicKey.Encrypt(dataToEncrypt, RSAEncryptionPadding.OaepSHA256);
+                EncryptedPassword = Convert.ToBase64String(bytesDecrypted);
+            }
+            return EncryptedPassword;
+        }
+        private string DecryptPassword()
+        {
+            string DecryptedPassword = string.Empty;
+            X509Certificate2 cert = new X509Certificate2(txtBoxCertificate.Text, txtBoxCertificatePassword.Text, X509KeyStorageFlags.MachineKeySet);
+            using (RSA privateKey = cert.GetRSAPrivateKey())
+            {
+                byte[] bytesEncrypted = Convert.FromBase64String(richTxtBoxDecryptEncrypted.Text);
+                byte[] bytesDecrypted = privateKey.Decrypt(bytesEncrypted, RSAEncryptionPadding.OaepSHA256);
+                DecryptedPassword = Encoding.Unicode.GetString(bytesDecrypted);
+            }
+            return DecryptedPassword;
+        }
+        private void btnDecryptDecrypt_Click(object sender, EventArgs e)
+        {
+            richTxtBoxDecryptDecrypted.Clear();
+            richTxtBoxDecryptDecrypted.AppendText(DecryptPassword());
         }
 
-        private void rbRequestProtobuf_Click(object sender, EventArgs e)
+        private void btnEncryptEncrypt_Click(object sender, EventArgs e)
         {
-            btnRequestSend.Enabled = false;
-        }
-
-        private void rbRequestSensorDeployment_Click(object sender, EventArgs e)
-        {
-            btnRequestSend.Enabled = true;
-        }
-
-        private void rbRequestJson_Click(object sender, EventArgs e)
-        {
-            btnRequestSend.Enabled = false;
+            richTextBoxEncryptEncrypted.Clear();
+            richTextBoxEncryptEncrypted.AppendText(EncryptPassword());
         }
     }
 }

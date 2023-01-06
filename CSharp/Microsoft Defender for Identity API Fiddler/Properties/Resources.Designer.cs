@@ -123,9 +123,89 @@ namespace Microsoft_Defender_for_Identity_API_Fiddler.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Decrypt_25px {
+            get {
+                object obj = ResourceManager.GetObject("Decrypt 25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Decrypt_512px {
+            get {
+                object obj = ResourceManager.GetObject("Decrypt 512px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Deployment_512px {
+            get {
+                object obj = ResourceManager.GetObject("Deployment 512px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Deployment_512px_Greyscale {
+            get {
+                object obj = ResourceManager.GetObject("Deployment 512px Greyscale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Encrypt_25px {
+            get {
+                object obj = ResourceManager.GetObject("Encrypt 25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Encrypt_512px {
+            get {
+                object obj = ResourceManager.GetObject("Encrypt 512px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Exit_25px {
             get {
                 object obj = ResourceManager.GetObject("Exit 25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Json_512px {
+            get {
+                object obj = ResourceManager.GetObject("Json 512px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Json_512px_Greyscale {
+            get {
+                object obj = ResourceManager.GetObject("Json 512px Greyscale", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formFiddler));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnDecrypt = new System.Windows.Forms.Button();
+            this.btnEncrypt = new System.Windows.Forms.Button();
             this.SidePanel = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -41,15 +43,16 @@
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pbTitle = new System.Windows.Forms.PictureBox();
             this.pnlDashboard = new System.Windows.Forms.Panel();
-            this.pnlDashboardInfo = new System.Windows.Forms.Panel();
             this.pnlDashboardStatus = new System.Windows.Forms.Panel();
+            this.pbJson = new System.Windows.Forms.PictureBox();
+            this.pbDeployment = new System.Windows.Forms.PictureBox();
+            this.pnlDashboardInfo = new System.Windows.Forms.Panel();
             this.pnlRequest = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlRequestResponse = new System.Windows.Forms.Panel();
             this.richTxtBoxRequestResponse = new System.Windows.Forms.RichTextBox();
             this.lblRequestResponse = new System.Windows.Forms.Label();
             this.pnlRequestBody = new System.Windows.Forms.Panel();
             this.rbRequestJson = new System.Windows.Forms.RadioButton();
-            this.rbRequestProtobuf = new System.Windows.Forms.RadioButton();
             this.rbRequestSensorDeployment = new System.Windows.Forms.RadioButton();
             this.lblRequestApi = new System.Windows.Forms.Label();
             this.btnRequestSend = new System.Windows.Forms.Button();
@@ -64,43 +67,74 @@
             this.richTxtBoxCompressDecompressed = new System.Windows.Forms.RichTextBox();
             this.lblCompressDecompressed = new System.Windows.Forms.Label();
             this.pnlDecompress = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlDecompressDecompressed = new System.Windows.Forms.Panel();
             this.lblDecompressDecompressed = new System.Windows.Forms.Label();
             this.richTxtBoxDecompressDecompressed = new System.Windows.Forms.RichTextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlDecompressCompressed = new System.Windows.Forms.Panel();
             this.richTxtBoxDecompressCompressed = new System.Windows.Forms.RichTextBox();
             this.btnDecompressDecompress = new System.Windows.Forms.Button();
             this.lblDecompressedCompressed = new System.Windows.Forms.Label();
             this.pnlSettings = new System.Windows.Forms.Panel();
             this.richTxtBoxSettingsInfo = new System.Windows.Forms.RichTextBox();
             this.pnlSettingsConfig = new System.Windows.Forms.Panel();
+            this.lblCertificatePassword = new System.Windows.Forms.Label();
+            this.txtBoxCertificatePassword = new System.Windows.Forms.TextBox();
+            this.lblCertificate = new System.Windows.Forms.Label();
+            this.txtBoxCertificate = new System.Windows.Forms.TextBox();
             this.lblSettingsAccessKey = new System.Windows.Forms.Label();
             this.lblSettingsWorkspaceName = new System.Windows.Forms.Label();
             this.txtBoxAccessKey = new System.Windows.Forms.TextBox();
             this.txtBoxSettingsWorkspaceName = new System.Windows.Forms.TextBox();
             this.lblSettingsWorkspaceID = new System.Windows.Forms.Label();
             this.txtBoxSettingsWorkspaceID = new System.Windows.Forms.TextBox();
+            this.pnlEncrypt = new System.Windows.Forms.Panel();
+            this.pnlEncryptEncrypted = new System.Windows.Forms.Panel();
+            this.richTextBoxEncryptEncrypted = new System.Windows.Forms.RichTextBox();
+            this.lblEncryptEncrypted = new System.Windows.Forms.Label();
+            this.pnlEncryptDecrypted = new System.Windows.Forms.Panel();
+            this.richTextBoxEncryptDecrypted = new System.Windows.Forms.RichTextBox();
+            this.btnEncryptEncrypt = new System.Windows.Forms.Button();
+            this.lblEncryptDecrypted = new System.Windows.Forms.Label();
+            this.pnlDecrypt = new System.Windows.Forms.Panel();
+            this.pnlDecryptDecrypted = new System.Windows.Forms.Panel();
+            this.lblDecryptDecrypted = new System.Windows.Forms.Label();
+            this.richTxtBoxDecryptDecrypted = new System.Windows.Forms.RichTextBox();
+            this.pnlDecryptEncrypted = new System.Windows.Forms.Panel();
+            this.lblDecryptEncrypted = new System.Windows.Forms.Label();
+            this.richTxtBoxDecryptEncrypted = new System.Windows.Forms.RichTextBox();
+            this.btnDecryptDecrypt = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTitle)).BeginInit();
             this.pnlDashboard.SuspendLayout();
+            this.pnlDashboardStatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbJson)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDeployment)).BeginInit();
             this.pnlRequest.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlRequestResponse.SuspendLayout();
             this.pnlRequestBody.SuspendLayout();
             this.pnlCompress.SuspendLayout();
             this.pnlCompressCompressed.SuspendLayout();
             this.pnlCompressDecompressed.SuspendLayout();
             this.pnlDecompress.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlDecompressDecompressed.SuspendLayout();
+            this.pnlDecompressCompressed.SuspendLayout();
             this.pnlSettings.SuspendLayout();
             this.pnlSettingsConfig.SuspendLayout();
+            this.pnlEncrypt.SuspendLayout();
+            this.pnlEncryptEncrypted.SuspendLayout();
+            this.pnlEncryptDecrypted.SuspendLayout();
+            this.pnlDecrypt.SuspendLayout();
+            this.pnlDecryptDecrypted.SuspendLayout();
+            this.pnlDecryptEncrypted.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnlMenu.Controls.Add(this.btnDecrypt);
+            this.pnlMenu.Controls.Add(this.btnEncrypt);
             this.pnlMenu.Controls.Add(this.SidePanel);
             this.pnlMenu.Controls.Add(this.btnSettings);
             this.pnlMenu.Controls.Add(this.btnExit);
@@ -114,6 +148,44 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(191, 674);
             this.pnlMenu.TabIndex = 3;
+            // 
+            // btnDecrypt
+            // 
+            this.btnDecrypt.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDecrypt.FlatAppearance.BorderSize = 0;
+            this.btnDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecrypt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecrypt.ForeColor = System.Drawing.Color.White;
+            this.btnDecrypt.Image = global::Microsoft_Defender_for_Identity_API_Fiddler.Properties.Resources.Decrypt_25px;
+            this.btnDecrypt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDecrypt.Location = new System.Drawing.Point(12, 424);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(166, 44);
+            this.btnDecrypt.TabIndex = 11;
+            this.btnDecrypt.Text = "  Decrypt";
+            this.btnDecrypt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDecrypt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDecrypt.UseVisualStyleBackColor = false;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
+            // 
+            // btnEncrypt
+            // 
+            this.btnEncrypt.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEncrypt.FlatAppearance.BorderSize = 0;
+            this.btnEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEncrypt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncrypt.ForeColor = System.Drawing.Color.White;
+            this.btnEncrypt.Image = global::Microsoft_Defender_for_Identity_API_Fiddler.Properties.Resources.Encrypt_25px;
+            this.btnEncrypt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEncrypt.Location = new System.Drawing.Point(12, 374);
+            this.btnEncrypt.Name = "btnEncrypt";
+            this.btnEncrypt.Size = new System.Drawing.Size(166, 44);
+            this.btnEncrypt.TabIndex = 10;
+            this.btnEncrypt.Text = "  Encrypt";
+            this.btnEncrypt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEncrypt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEncrypt.UseVisualStyleBackColor = false;
+            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
             // 
             // SidePanel
             // 
@@ -132,7 +204,7 @@
             this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.Image = global::Microsoft_Defender_for_Identity_API_Fiddler.Properties.Resources.Settings_25px;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(12, 374);
+            this.btnSettings.Location = new System.Drawing.Point(12, 474);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(166, 44);
             this.btnSettings.TabIndex = 7;
@@ -257,7 +329,7 @@
             // 
             // pbTitle
             // 
-            this.pbTitle.Image = global::Microsoft_Defender_for_Identity_API_Fiddler.Properties.Resources.Settings_512px;
+            this.pbTitle.Image = global::Microsoft_Defender_for_Identity_API_Fiddler.Properties.Resources.Decrypt_512px;
             this.pbTitle.Location = new System.Drawing.Point(328, 47);
             this.pbTitle.Name = "pbTitle";
             this.pbTitle.Size = new System.Drawing.Size(75, 75);
@@ -267,12 +339,42 @@
             // 
             // pnlDashboard
             // 
-            this.pnlDashboard.Controls.Add(this.pnlDashboardInfo);
             this.pnlDashboard.Controls.Add(this.pnlDashboardStatus);
+            this.pnlDashboard.Controls.Add(this.pnlDashboardInfo);
             this.pnlDashboard.Location = new System.Drawing.Point(197, 174);
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(731, 500);
             this.pnlDashboard.TabIndex = 5;
+            // 
+            // pnlDashboardStatus
+            // 
+            this.pnlDashboardStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnlDashboardStatus.Controls.Add(this.pbJson);
+            this.pnlDashboardStatus.Controls.Add(this.pbDeployment);
+            this.pnlDashboardStatus.Location = new System.Drawing.Point(0, 0);
+            this.pnlDashboardStatus.Name = "pnlDashboardStatus";
+            this.pnlDashboardStatus.Size = new System.Drawing.Size(731, 244);
+            this.pnlDashboardStatus.TabIndex = 0;
+            // 
+            // pbJson
+            // 
+            this.pbJson.Image = global::Microsoft_Defender_for_Identity_API_Fiddler.Properties.Resources.Json_512px;
+            this.pbJson.Location = new System.Drawing.Point(469, 50);
+            this.pbJson.Name = "pbJson";
+            this.pbJson.Size = new System.Drawing.Size(75, 75);
+            this.pbJson.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbJson.TabIndex = 2;
+            this.pbJson.TabStop = false;
+            // 
+            // pbDeployment
+            // 
+            this.pbDeployment.Image = global::Microsoft_Defender_for_Identity_API_Fiddler.Properties.Resources.Deployment_512px;
+            this.pbDeployment.Location = new System.Drawing.Point(172, 57);
+            this.pbDeployment.Name = "pbDeployment";
+            this.pbDeployment.Size = new System.Drawing.Size(75, 75);
+            this.pbDeployment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDeployment.TabIndex = 1;
+            this.pbDeployment.TabStop = false;
             // 
             // pnlDashboardInfo
             // 
@@ -282,32 +384,24 @@
             this.pnlDashboardInfo.Size = new System.Drawing.Size(731, 250);
             this.pnlDashboardInfo.TabIndex = 1;
             // 
-            // pnlDashboardStatus
-            // 
-            this.pnlDashboardStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.pnlDashboardStatus.Location = new System.Drawing.Point(0, 0);
-            this.pnlDashboardStatus.Name = "pnlDashboardStatus";
-            this.pnlDashboardStatus.Size = new System.Drawing.Size(731, 244);
-            this.pnlDashboardStatus.TabIndex = 0;
-            // 
             // pnlRequest
             // 
-            this.pnlRequest.Controls.Add(this.panel3);
+            this.pnlRequest.Controls.Add(this.pnlRequestResponse);
             this.pnlRequest.Controls.Add(this.pnlRequestBody);
             this.pnlRequest.Location = new System.Drawing.Point(197, 174);
             this.pnlRequest.Name = "pnlRequest";
             this.pnlRequest.Size = new System.Drawing.Size(731, 500);
             this.pnlRequest.TabIndex = 6;
             // 
-            // panel3
+            // pnlRequestResponse
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.panel3.Controls.Add(this.richTxtBoxRequestResponse);
-            this.panel3.Controls.Add(this.lblRequestResponse);
-            this.panel3.Location = new System.Drawing.Point(0, 250);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(731, 250);
-            this.panel3.TabIndex = 1;
+            this.pnlRequestResponse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnlRequestResponse.Controls.Add(this.richTxtBoxRequestResponse);
+            this.pnlRequestResponse.Controls.Add(this.lblRequestResponse);
+            this.pnlRequestResponse.Location = new System.Drawing.Point(0, 250);
+            this.pnlRequestResponse.Name = "pnlRequestResponse";
+            this.pnlRequestResponse.Size = new System.Drawing.Size(731, 250);
+            this.pnlRequestResponse.TabIndex = 1;
             // 
             // richTxtBoxRequestResponse
             // 
@@ -327,7 +421,7 @@
             this.lblRequestResponse.AutoSize = true;
             this.lblRequestResponse.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRequestResponse.ForeColor = System.Drawing.Color.White;
-            this.lblRequestResponse.Location = new System.Drawing.Point(3, 10);
+            this.lblRequestResponse.Location = new System.Drawing.Point(3, 5);
             this.lblRequestResponse.Name = "lblRequestResponse";
             this.lblRequestResponse.Size = new System.Drawing.Size(57, 13);
             this.lblRequestResponse.TabIndex = 1;
@@ -337,7 +431,6 @@
             // 
             this.pnlRequestBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.pnlRequestBody.Controls.Add(this.rbRequestJson);
-            this.pnlRequestBody.Controls.Add(this.rbRequestProtobuf);
             this.pnlRequestBody.Controls.Add(this.rbRequestSensorDeployment);
             this.pnlRequestBody.Controls.Add(this.lblRequestApi);
             this.pnlRequestBody.Controls.Add(this.btnRequestSend);
@@ -353,26 +446,12 @@
             this.rbRequestJson.AutoSize = true;
             this.rbRequestJson.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbRequestJson.ForeColor = System.Drawing.Color.White;
-            this.rbRequestJson.Location = new System.Drawing.Point(469, 211);
+            this.rbRequestJson.Location = new System.Drawing.Point(391, 211);
             this.rbRequestJson.Name = "rbRequestJson";
             this.rbRequestJson.Size = new System.Drawing.Size(47, 17);
             this.rbRequestJson.TabIndex = 14;
             this.rbRequestJson.Text = "json";
             this.rbRequestJson.UseVisualStyleBackColor = true;
-            this.rbRequestJson.Click += new System.EventHandler(this.rbRequestJson_Click);
-            // 
-            // rbRequestProtobuf
-            // 
-            this.rbRequestProtobuf.AutoSize = true;
-            this.rbRequestProtobuf.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbRequestProtobuf.ForeColor = System.Drawing.Color.White;
-            this.rbRequestProtobuf.Location = new System.Drawing.Point(391, 211);
-            this.rbRequestProtobuf.Name = "rbRequestProtobuf";
-            this.rbRequestProtobuf.Size = new System.Drawing.Size(72, 17);
-            this.rbRequestProtobuf.TabIndex = 13;
-            this.rbRequestProtobuf.Text = "protobuf";
-            this.rbRequestProtobuf.UseVisualStyleBackColor = true;
-            this.rbRequestProtobuf.Click += new System.EventHandler(this.rbRequestProtobuf_Click);
             // 
             // rbRequestSensorDeployment
             // 
@@ -387,7 +466,6 @@
             this.rbRequestSensorDeployment.TabStop = true;
             this.rbRequestSensorDeployment.Text = "sensorDeployment";
             this.rbRequestSensorDeployment.UseVisualStyleBackColor = true;
-            this.rbRequestSensorDeployment.Click += new System.EventHandler(this.rbRequestSensorDeployment_Click);
             // 
             // lblRequestApi
             // 
@@ -534,22 +612,22 @@
             // 
             // pnlDecompress
             // 
-            this.pnlDecompress.Controls.Add(this.panel2);
-            this.pnlDecompress.Controls.Add(this.panel1);
+            this.pnlDecompress.Controls.Add(this.pnlDecompressDecompressed);
+            this.pnlDecompress.Controls.Add(this.pnlDecompressCompressed);
             this.pnlDecompress.Location = new System.Drawing.Point(197, 174);
             this.pnlDecompress.Name = "pnlDecompress";
             this.pnlDecompress.Size = new System.Drawing.Size(731, 500);
             this.pnlDecompress.TabIndex = 7;
             // 
-            // panel2
+            // pnlDecompressDecompressed
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.panel2.Controls.Add(this.lblDecompressDecompressed);
-            this.panel2.Controls.Add(this.richTxtBoxDecompressDecompressed);
-            this.panel2.Location = new System.Drawing.Point(0, 250);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(731, 250);
-            this.panel2.TabIndex = 1;
+            this.pnlDecompressDecompressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnlDecompressDecompressed.Controls.Add(this.lblDecompressDecompressed);
+            this.pnlDecompressDecompressed.Controls.Add(this.richTxtBoxDecompressDecompressed);
+            this.pnlDecompressDecompressed.Location = new System.Drawing.Point(0, 250);
+            this.pnlDecompressDecompressed.Name = "pnlDecompressDecompressed";
+            this.pnlDecompressDecompressed.Size = new System.Drawing.Size(731, 250);
+            this.pnlDecompressDecompressed.TabIndex = 1;
             // 
             // lblDecompressDecompressed
             // 
@@ -575,16 +653,16 @@
             this.richTxtBoxDecompressDecompressed.TabIndex = 11;
             this.richTxtBoxDecompressDecompressed.Text = "";
             // 
-            // panel1
+            // pnlDecompressCompressed
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.panel1.Controls.Add(this.richTxtBoxDecompressCompressed);
-            this.panel1.Controls.Add(this.btnDecompressDecompress);
-            this.panel1.Controls.Add(this.lblDecompressedCompressed);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(731, 244);
-            this.panel1.TabIndex = 0;
+            this.pnlDecompressCompressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnlDecompressCompressed.Controls.Add(this.richTxtBoxDecompressCompressed);
+            this.pnlDecompressCompressed.Controls.Add(this.btnDecompressDecompress);
+            this.pnlDecompressCompressed.Controls.Add(this.lblDecompressedCompressed);
+            this.pnlDecompressCompressed.Location = new System.Drawing.Point(0, 0);
+            this.pnlDecompressCompressed.Name = "pnlDecompressCompressed";
+            this.pnlDecompressCompressed.Size = new System.Drawing.Size(731, 244);
+            this.pnlDecompressCompressed.TabIndex = 0;
             // 
             // richTxtBoxDecompressCompressed
             // 
@@ -650,6 +728,10 @@
             // pnlSettingsConfig
             // 
             this.pnlSettingsConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnlSettingsConfig.Controls.Add(this.lblCertificatePassword);
+            this.pnlSettingsConfig.Controls.Add(this.txtBoxCertificatePassword);
+            this.pnlSettingsConfig.Controls.Add(this.lblCertificate);
+            this.pnlSettingsConfig.Controls.Add(this.txtBoxCertificate);
             this.pnlSettingsConfig.Controls.Add(this.lblSettingsAccessKey);
             this.pnlSettingsConfig.Controls.Add(this.lblSettingsWorkspaceName);
             this.pnlSettingsConfig.Controls.Add(this.txtBoxAccessKey);
@@ -661,12 +743,56 @@
             this.pnlSettingsConfig.Size = new System.Drawing.Size(731, 244);
             this.pnlSettingsConfig.TabIndex = 0;
             // 
+            // lblCertificatePassword
+            // 
+            this.lblCertificatePassword.AutoSize = true;
+            this.lblCertificatePassword.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCertificatePassword.ForeColor = System.Drawing.Color.White;
+            this.lblCertificatePassword.Location = new System.Drawing.Point(64, 166);
+            this.lblCertificatePassword.Name = "lblCertificatePassword";
+            this.lblCertificatePassword.Size = new System.Drawing.Size(114, 13);
+            this.lblCertificatePassword.TabIndex = 9;
+            this.lblCertificatePassword.Text = "Certificate Password:";
+            // 
+            // txtBoxCertificatePassword
+            // 
+            this.txtBoxCertificatePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.txtBoxCertificatePassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBoxCertificatePassword.ForeColor = System.Drawing.Color.White;
+            this.txtBoxCertificatePassword.Location = new System.Drawing.Point(184, 164);
+            this.txtBoxCertificatePassword.Name = "txtBoxCertificatePassword";
+            this.txtBoxCertificatePassword.Size = new System.Drawing.Size(360, 20);
+            this.txtBoxCertificatePassword.TabIndex = 8;
+            this.txtBoxCertificatePassword.Text = "mimikatz";
+            // 
+            // lblCertificate
+            // 
+            this.lblCertificate.AutoSize = true;
+            this.lblCertificate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCertificate.ForeColor = System.Drawing.Color.White;
+            this.lblCertificate.Location = new System.Drawing.Point(90, 140);
+            this.lblCertificate.Name = "lblCertificate";
+            this.lblCertificate.Size = new System.Drawing.Size(88, 13);
+            this.lblCertificate.TabIndex = 7;
+            this.lblCertificate.Text = "Certificate Path:";
+            // 
+            // txtBoxCertificate
+            // 
+            this.txtBoxCertificate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.txtBoxCertificate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBoxCertificate.ForeColor = System.Drawing.Color.White;
+            this.txtBoxCertificate.Location = new System.Drawing.Point(184, 138);
+            this.txtBoxCertificate.Name = "txtBoxCertificate";
+            this.txtBoxCertificate.Size = new System.Drawing.Size(360, 20);
+            this.txtBoxCertificate.TabIndex = 6;
+            this.txtBoxCertificate.Text = "C:\\tools\\mdi.pfx";
+            // 
             // lblSettingsAccessKey
             // 
             this.lblSettingsAccessKey.AutoSize = true;
             this.lblSettingsAccessKey.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSettingsAccessKey.ForeColor = System.Drawing.Color.White;
-            this.lblSettingsAccessKey.Location = new System.Drawing.Point(116, 118);
+            this.lblSettingsAccessKey.Location = new System.Drawing.Point(115, 114);
             this.lblSettingsAccessKey.Name = "lblSettingsAccessKey";
             this.lblSettingsAccessKey.Size = new System.Drawing.Size(63, 13);
             this.lblSettingsAccessKey.TabIndex = 5;
@@ -677,7 +803,7 @@
             this.lblSettingsWorkspaceName.AutoSize = true;
             this.lblSettingsWorkspaceName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSettingsWorkspaceName.ForeColor = System.Drawing.Color.White;
-            this.lblSettingsWorkspaceName.Location = new System.Drawing.Point(80, 92);
+            this.lblSettingsWorkspaceName.Location = new System.Drawing.Point(79, 88);
             this.lblSettingsWorkspaceName.Name = "lblSettingsWorkspaceName";
             this.lblSettingsWorkspaceName.Size = new System.Drawing.Size(99, 13);
             this.lblSettingsWorkspaceName.TabIndex = 4;
@@ -688,7 +814,7 @@
             this.txtBoxAccessKey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.txtBoxAccessKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxAccessKey.ForeColor = System.Drawing.Color.White;
-            this.txtBoxAccessKey.Location = new System.Drawing.Point(185, 116);
+            this.txtBoxAccessKey.Location = new System.Drawing.Point(184, 112);
             this.txtBoxAccessKey.Name = "txtBoxAccessKey";
             this.txtBoxAccessKey.Size = new System.Drawing.Size(360, 20);
             this.txtBoxAccessKey.TabIndex = 3;
@@ -698,7 +824,7 @@
             this.txtBoxSettingsWorkspaceName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.txtBoxSettingsWorkspaceName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxSettingsWorkspaceName.ForeColor = System.Drawing.Color.White;
-            this.txtBoxSettingsWorkspaceName.Location = new System.Drawing.Point(185, 90);
+            this.txtBoxSettingsWorkspaceName.Location = new System.Drawing.Point(184, 86);
             this.txtBoxSettingsWorkspaceName.Name = "txtBoxSettingsWorkspaceName";
             this.txtBoxSettingsWorkspaceName.Size = new System.Drawing.Size(360, 20);
             this.txtBoxSettingsWorkspaceName.TabIndex = 2;
@@ -708,7 +834,7 @@
             this.lblSettingsWorkspaceID.AutoSize = true;
             this.lblSettingsWorkspaceID.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSettingsWorkspaceID.ForeColor = System.Drawing.Color.White;
-            this.lblSettingsWorkspaceID.Location = new System.Drawing.Point(98, 66);
+            this.lblSettingsWorkspaceID.Location = new System.Drawing.Point(97, 62);
             this.lblSettingsWorkspaceID.Name = "lblSettingsWorkspaceID";
             this.lblSettingsWorkspaceID.Size = new System.Drawing.Size(81, 13);
             this.lblSettingsWorkspaceID.TabIndex = 1;
@@ -719,10 +845,196 @@
             this.txtBoxSettingsWorkspaceID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.txtBoxSettingsWorkspaceID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxSettingsWorkspaceID.ForeColor = System.Drawing.Color.White;
-            this.txtBoxSettingsWorkspaceID.Location = new System.Drawing.Point(185, 64);
+            this.txtBoxSettingsWorkspaceID.Location = new System.Drawing.Point(184, 60);
             this.txtBoxSettingsWorkspaceID.Name = "txtBoxSettingsWorkspaceID";
             this.txtBoxSettingsWorkspaceID.Size = new System.Drawing.Size(360, 20);
             this.txtBoxSettingsWorkspaceID.TabIndex = 0;
+            // 
+            // pnlEncrypt
+            // 
+            this.pnlEncrypt.Controls.Add(this.pnlEncryptEncrypted);
+            this.pnlEncrypt.Controls.Add(this.pnlEncryptDecrypted);
+            this.pnlEncrypt.Location = new System.Drawing.Point(197, 174);
+            this.pnlEncrypt.Name = "pnlEncrypt";
+            this.pnlEncrypt.Size = new System.Drawing.Size(731, 500);
+            this.pnlEncrypt.TabIndex = 1;
+            // 
+            // pnlEncryptEncrypted
+            // 
+            this.pnlEncryptEncrypted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnlEncryptEncrypted.Controls.Add(this.richTextBoxEncryptEncrypted);
+            this.pnlEncryptEncrypted.Controls.Add(this.lblEncryptEncrypted);
+            this.pnlEncryptEncrypted.Location = new System.Drawing.Point(0, 250);
+            this.pnlEncryptEncrypted.Name = "pnlEncryptEncrypted";
+            this.pnlEncryptEncrypted.Size = new System.Drawing.Size(731, 250);
+            this.pnlEncryptEncrypted.TabIndex = 1;
+            // 
+            // richTextBoxEncryptEncrypted
+            // 
+            this.richTextBoxEncryptEncrypted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.richTextBoxEncryptEncrypted.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxEncryptEncrypted.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxEncryptEncrypted.ForeColor = System.Drawing.Color.White;
+            this.richTextBoxEncryptEncrypted.Location = new System.Drawing.Point(6, 26);
+            this.richTextBoxEncryptEncrypted.Name = "richTextBoxEncryptEncrypted";
+            this.richTextBoxEncryptEncrypted.ReadOnly = true;
+            this.richTextBoxEncryptEncrypted.Size = new System.Drawing.Size(717, 218);
+            this.richTextBoxEncryptEncrypted.TabIndex = 13;
+            this.richTextBoxEncryptEncrypted.Text = "";
+            // 
+            // lblEncryptEncrypted
+            // 
+            this.lblEncryptEncrypted.AutoSize = true;
+            this.lblEncryptEncrypted.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncryptEncrypted.ForeColor = System.Drawing.Color.White;
+            this.lblEncryptEncrypted.Location = new System.Drawing.Point(3, 5);
+            this.lblEncryptEncrypted.Name = "lblEncryptEncrypted";
+            this.lblEncryptEncrypted.Size = new System.Drawing.Size(59, 13);
+            this.lblEncryptEncrypted.TabIndex = 2;
+            this.lblEncryptEncrypted.Text = "Encrypted";
+            // 
+            // pnlEncryptDecrypted
+            // 
+            this.pnlEncryptDecrypted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnlEncryptDecrypted.Controls.Add(this.richTextBoxEncryptDecrypted);
+            this.pnlEncryptDecrypted.Controls.Add(this.btnEncryptEncrypt);
+            this.pnlEncryptDecrypted.Controls.Add(this.lblEncryptDecrypted);
+            this.pnlEncryptDecrypted.Location = new System.Drawing.Point(0, 0);
+            this.pnlEncryptDecrypted.Name = "pnlEncryptDecrypted";
+            this.pnlEncryptDecrypted.Size = new System.Drawing.Size(731, 244);
+            this.pnlEncryptDecrypted.TabIndex = 0;
+            // 
+            // richTextBoxEncryptDecrypted
+            // 
+            this.richTextBoxEncryptDecrypted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.richTextBoxEncryptDecrypted.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxEncryptDecrypted.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxEncryptDecrypted.ForeColor = System.Drawing.Color.White;
+            this.richTextBoxEncryptDecrypted.Location = new System.Drawing.Point(6, 26);
+            this.richTextBoxEncryptDecrypted.Name = "richTextBoxEncryptDecrypted";
+            this.richTextBoxEncryptDecrypted.Size = new System.Drawing.Size(717, 165);
+            this.richTextBoxEncryptDecrypted.TabIndex = 12;
+            this.richTextBoxEncryptDecrypted.Text = "thalpius";
+            // 
+            // btnEncryptEncrypt
+            // 
+            this.btnEncryptEncrypt.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEncryptEncrypt.FlatAppearance.BorderSize = 0;
+            this.btnEncryptEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEncryptEncrypt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncryptEncrypt.ForeColor = System.Drawing.Color.White;
+            this.btnEncryptEncrypt.Location = new System.Drawing.Point(557, 197);
+            this.btnEncryptEncrypt.Name = "btnEncryptEncrypt";
+            this.btnEncryptEncrypt.Size = new System.Drawing.Size(166, 44);
+            this.btnEncryptEncrypt.TabIndex = 11;
+            this.btnEncryptEncrypt.Text = "Encrypt";
+            this.btnEncryptEncrypt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEncryptEncrypt.UseVisualStyleBackColor = false;
+            this.btnEncryptEncrypt.Click += new System.EventHandler(this.btnEncryptEncrypt_Click);
+            // 
+            // lblEncryptDecrypted
+            // 
+            this.lblEncryptDecrypted.AutoSize = true;
+            this.lblEncryptDecrypted.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncryptDecrypted.ForeColor = System.Drawing.Color.White;
+            this.lblEncryptDecrypted.Location = new System.Drawing.Point(3, 5);
+            this.lblEncryptDecrypted.Name = "lblEncryptDecrypted";
+            this.lblEncryptDecrypted.Size = new System.Drawing.Size(60, 13);
+            this.lblEncryptDecrypted.TabIndex = 1;
+            this.lblEncryptDecrypted.Text = "Decrypted";
+            // 
+            // pnlDecrypt
+            // 
+            this.pnlDecrypt.Controls.Add(this.pnlDecryptDecrypted);
+            this.pnlDecrypt.Controls.Add(this.pnlDecryptEncrypted);
+            this.pnlDecrypt.Location = new System.Drawing.Point(197, 174);
+            this.pnlDecrypt.Name = "pnlDecrypt";
+            this.pnlDecrypt.Size = new System.Drawing.Size(731, 500);
+            this.pnlDecrypt.TabIndex = 2;
+            // 
+            // pnlDecryptDecrypted
+            // 
+            this.pnlDecryptDecrypted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnlDecryptDecrypted.Controls.Add(this.lblDecryptDecrypted);
+            this.pnlDecryptDecrypted.Controls.Add(this.richTxtBoxDecryptDecrypted);
+            this.pnlDecryptDecrypted.Location = new System.Drawing.Point(0, 250);
+            this.pnlDecryptDecrypted.Name = "pnlDecryptDecrypted";
+            this.pnlDecryptDecrypted.Size = new System.Drawing.Size(731, 250);
+            this.pnlDecryptDecrypted.TabIndex = 1;
+            // 
+            // lblDecryptDecrypted
+            // 
+            this.lblDecryptDecrypted.AutoSize = true;
+            this.lblDecryptDecrypted.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDecryptDecrypted.ForeColor = System.Drawing.Color.White;
+            this.lblDecryptDecrypted.Location = new System.Drawing.Point(3, 5);
+            this.lblDecryptDecrypted.Name = "lblDecryptDecrypted";
+            this.lblDecryptDecrypted.Size = new System.Drawing.Size(60, 13);
+            this.lblDecryptDecrypted.TabIndex = 13;
+            this.lblDecryptDecrypted.Text = "Decrypted";
+            // 
+            // richTxtBoxDecryptDecrypted
+            // 
+            this.richTxtBoxDecryptDecrypted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.richTxtBoxDecryptDecrypted.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTxtBoxDecryptDecrypted.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTxtBoxDecryptDecrypted.ForeColor = System.Drawing.Color.White;
+            this.richTxtBoxDecryptDecrypted.Location = new System.Drawing.Point(6, 26);
+            this.richTxtBoxDecryptDecrypted.Name = "richTxtBoxDecryptDecrypted";
+            this.richTxtBoxDecryptDecrypted.ReadOnly = true;
+            this.richTxtBoxDecryptDecrypted.Size = new System.Drawing.Size(717, 218);
+            this.richTxtBoxDecryptDecrypted.TabIndex = 12;
+            this.richTxtBoxDecryptDecrypted.Text = "";
+            // 
+            // pnlDecryptEncrypted
+            // 
+            this.pnlDecryptEncrypted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnlDecryptEncrypted.Controls.Add(this.lblDecryptEncrypted);
+            this.pnlDecryptEncrypted.Controls.Add(this.richTxtBoxDecryptEncrypted);
+            this.pnlDecryptEncrypted.Controls.Add(this.btnDecryptDecrypt);
+            this.pnlDecryptEncrypted.Location = new System.Drawing.Point(0, 0);
+            this.pnlDecryptEncrypted.Name = "pnlDecryptEncrypted";
+            this.pnlDecryptEncrypted.Size = new System.Drawing.Size(731, 244);
+            this.pnlDecryptEncrypted.TabIndex = 0;
+            // 
+            // lblDecryptEncrypted
+            // 
+            this.lblDecryptEncrypted.AutoSize = true;
+            this.lblDecryptEncrypted.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDecryptEncrypted.ForeColor = System.Drawing.Color.White;
+            this.lblDecryptEncrypted.Location = new System.Drawing.Point(3, 5);
+            this.lblDecryptEncrypted.Name = "lblDecryptEncrypted";
+            this.lblDecryptEncrypted.Size = new System.Drawing.Size(59, 13);
+            this.lblDecryptEncrypted.TabIndex = 12;
+            this.lblDecryptEncrypted.Text = "Encrypted";
+            // 
+            // richTxtBoxDecryptEncrypted
+            // 
+            this.richTxtBoxDecryptEncrypted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.richTxtBoxDecryptEncrypted.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTxtBoxDecryptEncrypted.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTxtBoxDecryptEncrypted.ForeColor = System.Drawing.Color.White;
+            this.richTxtBoxDecryptEncrypted.Location = new System.Drawing.Point(6, 26);
+            this.richTxtBoxDecryptEncrypted.Name = "richTxtBoxDecryptEncrypted";
+            this.richTxtBoxDecryptEncrypted.Size = new System.Drawing.Size(717, 165);
+            this.richTxtBoxDecryptEncrypted.TabIndex = 11;
+            this.richTxtBoxDecryptEncrypted.Text = "";
+            // 
+            // btnDecryptDecrypt
+            // 
+            this.btnDecryptDecrypt.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDecryptDecrypt.FlatAppearance.BorderSize = 0;
+            this.btnDecryptDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecryptDecrypt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecryptDecrypt.ForeColor = System.Drawing.Color.White;
+            this.btnDecryptDecrypt.Location = new System.Drawing.Point(557, 197);
+            this.btnDecryptDecrypt.Name = "btnDecryptDecrypt";
+            this.btnDecryptDecrypt.Size = new System.Drawing.Size(166, 44);
+            this.btnDecryptDecrypt.TabIndex = 10;
+            this.btnDecryptDecrypt.Text = "Decrypt";
+            this.btnDecryptDecrypt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDecryptDecrypt.UseVisualStyleBackColor = false;
+            this.btnDecryptDecrypt.Click += new System.EventHandler(this.btnDecryptDecrypt_Click);
             // 
             // formFiddler
             // 
@@ -735,6 +1047,8 @@
             this.Controls.Add(this.pnlDecompress);
             this.Controls.Add(this.pnlCompress);
             this.Controls.Add(this.pnlRequest);
+            this.Controls.Add(this.pnlDecrypt);
+            this.Controls.Add(this.pnlEncrypt);
             this.Controls.Add(this.pnlDashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -746,9 +1060,12 @@
             this.pnlTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbTitle)).EndInit();
             this.pnlDashboard.ResumeLayout(false);
+            this.pnlDashboardStatus.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbJson)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDeployment)).EndInit();
             this.pnlRequest.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlRequestResponse.ResumeLayout(false);
+            this.pnlRequestResponse.PerformLayout();
             this.pnlRequestBody.ResumeLayout(false);
             this.pnlRequestBody.PerformLayout();
             this.pnlCompress.ResumeLayout(false);
@@ -757,13 +1074,23 @@
             this.pnlCompressDecompressed.ResumeLayout(false);
             this.pnlCompressDecompressed.PerformLayout();
             this.pnlDecompress.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlDecompressDecompressed.ResumeLayout(false);
+            this.pnlDecompressDecompressed.PerformLayout();
+            this.pnlDecompressCompressed.ResumeLayout(false);
+            this.pnlDecompressCompressed.PerformLayout();
             this.pnlSettings.ResumeLayout(false);
             this.pnlSettingsConfig.ResumeLayout(false);
             this.pnlSettingsConfig.PerformLayout();
+            this.pnlEncrypt.ResumeLayout(false);
+            this.pnlEncryptEncrypted.ResumeLayout(false);
+            this.pnlEncryptEncrypted.PerformLayout();
+            this.pnlEncryptDecrypted.ResumeLayout(false);
+            this.pnlEncryptDecrypted.PerformLayout();
+            this.pnlDecrypt.ResumeLayout(false);
+            this.pnlDecryptDecrypted.ResumeLayout(false);
+            this.pnlDecryptDecrypted.PerformLayout();
+            this.pnlDecryptEncrypted.ResumeLayout(false);
+            this.pnlDecryptEncrypted.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -797,8 +1124,8 @@
         private System.Windows.Forms.RichTextBox richTxtBoxCompressDecompressed;
         private System.Windows.Forms.Button btnCompressCompress;
         private System.Windows.Forms.RichTextBox richTxtBoxCompressCompressed;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlDecompressDecompressed;
+        private System.Windows.Forms.Panel pnlDecompressCompressed;
         private System.Windows.Forms.Label lblDecompressedCompressed;
         private System.Windows.Forms.Label lblDecompressDecompressed;
         private System.Windows.Forms.RichTextBox richTxtBoxDecompressDecompressed;
@@ -811,16 +1138,39 @@
         private System.Windows.Forms.TextBox txtBoxAccessKey;
         private System.Windows.Forms.TextBox txtBoxSettingsWorkspaceName;
         private System.Windows.Forms.RichTextBox richTxtBoxSettingsInfo;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlRequestResponse;
         private System.Windows.Forms.Button btnRequestSend;
         private System.Windows.Forms.RichTextBox richTxtBoxRequestBody;
         private System.Windows.Forms.Label lblRequestBody;
         private System.Windows.Forms.Label lblRequestResponse;
         private System.Windows.Forms.RichTextBox richTxtBoxRequestResponse;
         private System.Windows.Forms.RadioButton rbRequestJson;
-        private System.Windows.Forms.RadioButton rbRequestProtobuf;
         private System.Windows.Forms.RadioButton rbRequestSensorDeployment;
         private System.Windows.Forms.Label lblRequestApi;
+        private System.Windows.Forms.TextBox txtBoxCertificate;
+        private System.Windows.Forms.Label lblCertificate;
+        private System.Windows.Forms.Label lblCertificatePassword;
+        private System.Windows.Forms.TextBox txtBoxCertificatePassword;
+        private System.Windows.Forms.Button btnDecrypt;
+        private System.Windows.Forms.Button btnEncrypt;
+        private System.Windows.Forms.PictureBox pbJson;
+        private System.Windows.Forms.PictureBox pbDeployment;
+        private System.Windows.Forms.Panel pnlEncrypt;
+        private System.Windows.Forms.Panel pnlEncryptDecrypted;
+        private System.Windows.Forms.Panel pnlDecrypt;
+        private System.Windows.Forms.Panel pnlDecryptDecrypted;
+        private System.Windows.Forms.Label lblDecryptDecrypted;
+        private System.Windows.Forms.RichTextBox richTxtBoxDecryptDecrypted;
+        private System.Windows.Forms.Panel pnlDecryptEncrypted;
+        private System.Windows.Forms.Label lblDecryptEncrypted;
+        private System.Windows.Forms.RichTextBox richTxtBoxDecryptEncrypted;
+        private System.Windows.Forms.Button btnDecryptDecrypt;
+        private System.Windows.Forms.Panel pnlEncryptEncrypted;
+        private System.Windows.Forms.Label lblEncryptEncrypted;
+        private System.Windows.Forms.Button btnEncryptEncrypt;
+        private System.Windows.Forms.Label lblEncryptDecrypted;
+        private System.Windows.Forms.RichTextBox richTextBoxEncryptDecrypted;
+        private System.Windows.Forms.RichTextBox richTextBoxEncryptEncrypted;
     }
 }
 

@@ -128,7 +128,9 @@ Here is an example:
 
 Workspace ID: 09ab973c-0655-4364-a903-c277d1c9848b
 Workspace Name: thalpius-onmicrosoft-com
-Access Key: JWgLsEp6AviyjaeAZ1vUqNNJhmPAi1Bv10ZXFHggH1GGAzLK8d6JoBWtCk1JncQwTTiUl62CMSAjCjc+YFd6dw==</value>
+Access Key: JWgLsEp6AviyjaeAZ1vUqNNJhmPAi1Bv10ZXFHggH1GGAzLK8d6JoBWtCk1JncQwTTiUl62CMSAjCjc+YFd6dw==
+
+For the certificate, use the path for the PFX file and the password for the PFX file. You can extract the certificate using Mimikatz.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
